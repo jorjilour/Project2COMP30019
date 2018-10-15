@@ -8,19 +8,19 @@ public class PlayerShootEnemy : MonoBehaviour {
     public GameObject projectilePrefab;
     public GameObject projectilePrefab2;
     public float projectileSpeed = 30.0f;
-
+	private GameObject projectileInitPos;
 
     // Use this for initialization
     void Start()
     {
-
+		projectileInitPos = GameObject.FindWithTag ("ProjPos");
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(0))
         {
             //GameObject projectile = Instantiate<GameObject>(projectilePrefab);
             //ParticleSystem particleSystem = Instantiate<ParticleSystem>(particleSystemPrefab);
@@ -30,7 +30,9 @@ public class PlayerShootEnemy : MonoBehaviour {
             //particleSystem.transform.parent = projectile.transform;
 
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
-            projectile.transform.position = this.gameObject.transform.position;
+            projectile.transform.position = projectileInitPos.transform.position;
+
+			Destroy (projectile, 2.0f);
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {
@@ -46,26 +48,7 @@ public class PlayerShootEnemy : MonoBehaviour {
 
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mouseScreenPos = Input.mousePosition;
-
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = Camera.main.transform.position.y;
-
-            var worldPos = Camera.main.ScreenToWorldPoint(mousePosition);
-
-            var direction = worldPos - transform.position;
-            direction.Normalize();
-
-
-
-            GameObject projectile = Instantiate<GameObject>(projectilePrefab);
-            projectile.transform.position = this.gameObject.transform.position;
-
-            var projectileController = projectile.GetComponent<ProjectileScript>();
-            projectileController.velocity = direction * projectileSpeed;
-        }
+       
 
         if (Input.GetMouseButtonDown(1))
         {

@@ -15,19 +15,14 @@ public class ProjectileScript : MonoBehaviour {
         m_RigidBody = GetComponent<Rigidbody>();
         cam = Camera.main;
         //velocity = Vector3.zero;
+		Vector3 desiredMove = cam.transform.forward;
+		m_RigidBody.velocity = desiredMove * 15;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(!velocity.Equals(Vector3.zero))
-        {
-            this.transform.Translate(velocity * Time.deltaTime);
-        } else
-        {
-            Vector3 desiredMove = cam.transform.forward;
-            this.transform.position += desiredMove;
-        }
+        
 
     }
 
@@ -55,8 +50,12 @@ public class ProjectileScript : MonoBehaviour {
             Destroy(this.gameObject);
 
         }
-    }
+
+		if (collision.gameObject.tag != "Gun") {
+			Destroy (this.gameObject);
+		}
+    
 
 
-
+	}
 }
