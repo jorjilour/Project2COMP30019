@@ -3,40 +3,52 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChickenScript : MonoBehaviour {
-    //platform for chicken to move around
-    private GameObject platform;
-    //public GameObject platformPrefab;
-    public GameObject egg; 
+	//platform for chicken to move around
+	private GameObject platform; 
+	public GameObject egg; 
+	private float ySize ; 
 
 
 	// Use this for initialization
 	void Start () {
-        //LayEggs();
-        InvokeRepeating("LayEggs", Random.Range(1.0f, 3.0f), Random.Range(5.0f, 10.0f));
-        //platform = platformPrefab;
+		platform = this.transform.parent.gameObject;
 
-    }
+		float zSize = platform.GetComponent<Collider>().bounds.size.z;
+		zSize /= 2; 
 
-    public void AssignPlatform(GameObject newPlatform)
-    {
-        this.platform = newPlatform;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        transform.RotateAround(platform.transform.position-(Vector3.one*2),Vector3.up,0.5f);
+		ySize = platform.GetComponent<Collider>().bounds.size.y;
+
+		Vector3 pos = this.transform.position; 
+		pos.z += Random.Range (1.0f,zSize);
+		pos.y += ySize;
+
+		this.transform.position = pos; 
+
+		LayEggs();
+		InvokeRepeating("LayEggs", 3.0f, 4.5f);
+
+
 	}
 
-    void LayEggs()
-    {
-        GameObject newEgg = Instantiate<GameObject>(egg);
+	// Update is called once per frame
+	void Update () {
+		transform.RotateAround(platform.transform.position,Vector3.down,0.5f);
+		//Vector3.up; Vector3.forward;Vector3.right;
+	}
 
-        var platformHeight = platform.GetComponent<MeshRenderer>().bounds.size.y;
-        Vector3 chickPosition = this.gameObject.transform.position;
+	void LayEggs()
+	{
+		GameObject newEgg = Instantiate<GameObject>(egg);
 
-        float yPos = chickPosition.y + platformHeight / 2;
+		Vector3 position = this.gameObject.transform.position;
+		position.y += ySize; 
+		newEgg.transform.position = position;
+	}
 
-        chickPosition.y = yPos;
-        newEgg.transform.position = chickPosition;
-    }
+	public void AssignPlatform(GameObject newPlatform){
+		this.platform = newPlatform; 
+	}
+
+
+
 }
