@@ -14,12 +14,12 @@ public class GoalManager : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            Debug.Log("goal finished");
-            FinishedALevel.Instance.GoalReached(level);   
-        }
-    }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if(other.gameObject.tag == "Player"||other.gameObject.tag == "MainCamera")
+		{
+			FinishedALevel.Instance.GoalReached(level);   
+		}
+	}
 }

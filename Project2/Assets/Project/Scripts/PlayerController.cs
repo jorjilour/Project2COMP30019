@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && !jumping)
         {
-			print ("hi");
+//			print ("player is jumping");
             Jump();
             jumping = true;
         }
@@ -102,4 +102,5 @@ public class PlayerController : MonoBehaviour {
         lives--;
         GameOver();
     }
+
 }

@@ -9,9 +9,10 @@ public class MakePlatform : MonoBehaviour {
 	public GameObject[] naturePrefabs;
 	public GameObject[] enemiesPrefabs;
 
-	private int minNSpawn = 5;
-	private int maxNSpawn = 15;
-	private int maxNEnemies = 2;
+	public int minNSpawn = 5;
+	public int maxNSpawn = 15;
+	public int maxNEnemies = 2;
+	public int minNEnemies = 2; 
 
 	private int nEnemies;
 	private int nSpawns;
@@ -25,7 +26,7 @@ public class MakePlatform : MonoBehaviour {
 
 
 		nSpawns = Random.Range(minNSpawn, maxNSpawn);
-				nEnemies = Random.Range(0, maxNEnemies);
+		nEnemies = Random.Range(minNEnemies, maxNEnemies);
 
 		for(int i=0; i<nSpawns; i++) SpawnNatureObject(naturePrefabs);
 
@@ -41,6 +42,8 @@ public class MakePlatform : MonoBehaviour {
 		int whichItem = (int) Random.Range(0, objects.Length - 1);
 
 		GameObject randObject = Instantiate(objects[whichItem]);
+		randObject.transform.parent = this.gameObject.transform;
+
 		//randObject.transform.position = Vector3.zero;
 		randObject.transform.position = NextRandomPosition(randObject, this.gameObject);
 	}
@@ -78,10 +81,13 @@ public class MakePlatform : MonoBehaviour {
 		var spawnSize = spawn.GetComponent<MeshRenderer>().bounds.size;
 		var platformSize = platform.GetComponent<MeshRenderer>().bounds.size;
 
-		//		print ("centered at y position of "+center.y);
+//		print ("centered at y position of "+center.y);
 		//Debug.Log("spawnsize : " + spawnSize);
 		//Debug.Log("platform size : " + platformSize);
-		float dY = 0.0f;
+		float dY = platformSize.y/2;
+
+
+//		print ("half the platform dY is "+dY);
 
 		float minX = -(platformSize.x / 2 - spawnSize.x);
 		float maxX = -minX;
@@ -93,22 +99,52 @@ public class MakePlatform : MonoBehaviour {
 		Vector3 newRandPos = center + new Vector3(Random.Range(minX, maxX),
 			dY,
 			Random.Range(minZ, maxZ));
-
+//		print ("the new dY is"+newRandPos.y); 
 		//		print("treePos at" + center + ": " + newRandPos);
 		return newRandPos;
 	}
 
 	Vector3 NextRandomEnemyPosition(GameObject spawn, GameObject platform)
 	{
-		Vector3 pos = this.gameObject.transform.position; 
+		var center = this.transform.position;
+//		print ("dy position of the platform is "+center.y);
 
-		if(spawn.tag == "Chicken")
-		{
-			//			var chickenController = randObject.GetComponent<ChickenScript>();
-		} else if(spawn.tag == "Dragon"){
-			//			var dragonScript = randObject.GetComponent<DragonScript>();
-		}
-		return pos; 
+		var spawnSize = spawn.GetComponent<MeshRenderer>().bounds.size;
+//		print (spawnSize == null);
+		var platformSize = platform.GetComponent<MeshRenderer>().bounds.size;
+
+
+		Collider c = GetComponent<Collider> (); 
+		float cY = c.bounds.size.y;
+
+//		print ("cY is "+cY);
+
+//		float dY = center.y;
+		float dY = platformSize.y/2 + cY/8;
+//		print (spawnSize.y);
+		dY += spawnSize.y * 20.0f;
+
+//		print ("half the platform dY is "+dY);
+
+		float minX = -(platformSize.x / 2 - spawnSize.x);
+		float maxX = -minX;
+
+		float minZ = -(platformSize.z / 2 - spawnSize.z);
+		float maxZ = -minZ;
+
+
+		Vector3 newRandPos = center + new Vector3(0.0f,
+			dY,
+			0.0f);
+//
+//		Vector3 pos = this.gameObject.transform.position; 
+//		float dY = 0.0f;
+//
+////		float dY = platformSize.y/2;
+//
+//		pos += new Vector3 (0.0f,dY,0.0f); 
+
+		return newRandPos; 
 
 	}
 

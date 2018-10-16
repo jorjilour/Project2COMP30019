@@ -55,11 +55,15 @@ public class PlayerHealthManager : MonoBehaviour
             print("current health is now " + currentHealth);
             ApplyDamage();
         }
+
+		if (collision.gameObject.tag=="Goal"){
+			print ("touched goal!");
+		}
     }
 
     void OnTriggerEnter(Collider other)
     {
-        
+		print ("triggered goal ");
         if (other.gameObject.tag == "PowerUp")
         {
             print ("collected a power up, health++");

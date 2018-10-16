@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class EggScript : MonoBehaviour {
     public ParticleSystem particleSystemPrefab; 
+	public GameObject dragon; 
 
 	// Use this for initialization
 	void Start () {
-        Invoke("Explode", 5.0f);
+		dragon = this.transform.parent.gameObject;
 	}
-	
+
+	void OnCollisionEnter(Collision collision){
+		if (collision.gameObject != dragon ) {
+			Explode (); 
+
+		}
+
+
+	}
+		
 	// Update is called once per frame
 	void Explode () {
         ParticleSystem particleSystemInstance = Instantiate<ParticleSystem>(particleSystemPrefab);

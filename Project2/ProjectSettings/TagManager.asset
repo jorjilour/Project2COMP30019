@@ -10,6 +10,11 @@ TagManager:
   - Projectile
   - Fire
   - Enemy2
+  - Hell
+  - Goal
+  - PowerUp
+  - ProjPos
+  - Gun
   layers:
   - Default
   - TransparentFX
