@@ -292,6 +292,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &272966645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -375,6 +376,16 @@ Prefab:
     - target: {fileID: 1755672484203672, guid: 542d871d744aa444db226eee45da6857, type: 2}
       propertyPath: m_Name
       value: Platform3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -518,6 +529,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -559,6 +580,16 @@ Prefab:
     - target: {fileID: 4240417935272878, guid: 542d871d744aa444db226eee45da6857, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245604402937262, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245604402937262, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 542d871d744aa444db226eee45da6857, type: 2}
@@ -631,6 +662,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &526685002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -711,6 +743,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -782,6 +824,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &922701838
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -900,6 +943,16 @@ Prefab:
     - target: {fileID: 1755672484203672, guid: 542d871d744aa444db226eee45da6857, type: 2}
       propertyPath: m_Name
       value: Platform3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
@@ -1037,6 +1090,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &1392173557
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1136,6 +1190,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_IsPrefabParent: 0
@@ -1212,6 +1276,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &1730199516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1321,6 +1386,7 @@ MonoBehaviour:
   minNSpawn: 5
   maxNSpawn: 15
   maxNEnemies: 2
+  minNEnemies: 0
 --- !u!23 &1911730803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1533,6 +1599,16 @@ Prefab:
     - target: {fileID: 4828967142095474, guid: 542d871d744aa444db226eee45da6857, type: 2}
       propertyPath: m_LocalScale.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: maxNEnemies
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114412392574811826, guid: 542d871d744aa444db226eee45da6857,
+        type: 2}
+      propertyPath: minNEnemies
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -16,7 +16,7 @@ public class ParticleCollisionScript : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("collided with something");
+        Debug.Log("particle collisions collided with something");
 
         if (other.tag=="Player"){
             Debug.Log("collided with particle system");

@@ -6,6 +6,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     //code copied from COMP30019 Lab 7 
     public int startingHealth = 100;
+	public ParticleSystem firework; 
+	public ParticleSystem fireworkChild; 
+
     private int currentHealth;
     private int damage = 30;
     private int powerUp = 10;
@@ -49,6 +52,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+		print ("player collided with something "+collision.gameObject);
         if (collision.gameObject.tag == "Enemy")
         {
             //print ("hit an enemy, health --"); 
@@ -59,11 +63,28 @@ public class PlayerHealthManager : MonoBehaviour
 		if (collision.gameObject.tag=="Goal"){
 			print ("touched goal!");
 		}
+
+		if (collision.gameObject.tag=="Explosion"){
+			print ("hit an explosion");
+		}
     }
 
     void OnTriggerEnter(Collider other)
     {
 		print ("triggered goal ");
+		if (other.gameObject.tag == "Goal"){
+			Destroy (other.gameObject);
+
+			ParticleSystem fireworkInstance = Instantiate<ParticleSystem>(firework);
+			fireworkInstance.transform.position = this.gameObject.transform.position;
+
+			Destroy(GetComponent<SmoothMouseLook>());
+
+			this.transform.eulerAngles -= new Vector3(90.0f, 0.0f, 0.0f);
+//			this.transform.rotation = new Quaternion (0.0, 0.3, 0.0, 1.0);
+//			print ("rotation is now "+this.transform.rotation);
+
+		}
         if (other.gameObject.tag == "PowerUp")
         {
             print ("collected a power up, health++");
@@ -72,5 +93,7 @@ public class PlayerHealthManager : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
 
 }

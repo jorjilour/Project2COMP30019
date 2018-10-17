@@ -42,12 +42,12 @@ public class FinishedALevel : MonoBehaviour
             endMessage.text += message + currentLevel.ToString();
             isLevelFinished = false;
         }
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
-        {
-            endMessage.text = "";
-            LevelFinished();
-        }
+//        timeLeft -= Time.deltaTime;
+//        if (timeLeft < 0)
+//        {
+//            endMessage.text = "";
+//            LevelFinished();
+//        }
     }
 
     // Update is called once per frame

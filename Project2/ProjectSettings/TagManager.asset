@@ -15,6 +15,7 @@ TagManager:
   - PowerUp
   - ProjPos
   - Gun
+  - explosion
   layers:
   - Default
   - TransparentFX

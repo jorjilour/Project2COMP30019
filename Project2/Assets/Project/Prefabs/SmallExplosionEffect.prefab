@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 199000010939959374}
   - component: {fileID: 114693138536556624}
   - component: {fileID: 114530058316284426}
-  - component: {fileID: 68959567991427954}
+  - component: {fileID: 76213039211211658}
   m_Layer: 0
   m_Name: SmallExplosionEffect
   m_TagString: Explosion
@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013462590818}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3.57, y: 2.67, z: 8.71}
+  m_LocalPosition: {x: -8.101493, y: 1.7654207, z: 42.29334}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4000014291108156}
@@ -137,23 +137,19 @@ Transform:
   m_Father: {fileID: 4000011428506136}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &68959567991427954
-EdgeCollider2D:
+--- !u!76 &76213039211211658
+WorldParticleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013462590818}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
+  m_BounceFactor: 0.5
+  m_CollisionEnergyLoss: 0
+  m_CollidesWith:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_SendCollisionMessage: 1
+  m_MinKillVelocity: 0
 --- !u!114 &114530058316284426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,7 +231,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 1277360899
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2504,7 +2500,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 0
     collisionMode: 0
@@ -6685,7 +6681,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 0
+  randomSeed: 1720892510
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9867,7 +9863,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
-  randomSeed: 0
+  randomSeed: 509987089
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -12028,7 +12024,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 0
     collisionMode: 0

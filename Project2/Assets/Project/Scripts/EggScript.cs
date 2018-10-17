@@ -14,7 +14,6 @@ public class EggScript : MonoBehaviour {
 	void OnCollisionEnter(Collision collision){
 		if (collision.gameObject != dragon ) {
 			Explode (); 
-
 		}
 
 
@@ -23,8 +22,10 @@ public class EggScript : MonoBehaviour {
 	// Update is called once per frame
 	void Explode () {
         ParticleSystem particleSystemInstance = Instantiate<ParticleSystem>(particleSystemPrefab);
+//		particleSystemInstance.transform.parent = this.gameObject.transform.parent;
         particleSystemInstance.transform.position = this.gameObject.transform.position;
 
         Destroy(this.gameObject);
 	}
+
 }

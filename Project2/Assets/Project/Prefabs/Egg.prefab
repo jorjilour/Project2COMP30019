@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystemPrefab: {fileID: 198000012942003240, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 2}
-  dragon: {fileID: 0}
+  dragon: {fileID: 1475748930283130, guid: 82c2120eaf2b1cf4d8127d7fdd85dcc7, type: 2}
 --- !u!136 &136371228567213164
 CapsuleCollider:
   m_ObjectHideFlags: 1
