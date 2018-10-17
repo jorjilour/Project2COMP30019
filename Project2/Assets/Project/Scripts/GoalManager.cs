@@ -16,10 +16,10 @@ public class GoalManager : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "MainCamera")
         {
             Debug.Log("goal finished");
-            FinishedALevel.Instance.GoalReached(level);   
+            FinishedALevel.Instance.GoalReached();   
         }
     }
 }

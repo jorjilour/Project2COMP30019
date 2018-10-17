@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FinishedALevel : MonoBehaviour
@@ -8,8 +9,8 @@ public class FinishedALevel : MonoBehaviour
     public static FinishedALevel Instance;
     public Text endMessage;
 
-    private int currentLevel;
-    private float timeLeft = 30.0f;
+    private string currentLevel;
+    private float timeLeft = 2.0f;
     private static string message = "You Finished Level ";
     private Time time;
     private bool isLevelFinished;
@@ -30,36 +31,44 @@ public class FinishedALevel : MonoBehaviour
     void Start()
     {
         //endMessage.text = message;
-        currentLevel = 0;
         isLevelFinished = false;
+        endMessage.text = "";
+
     }
 
     private void Update()
     {
         //print("UPDATING");
+        //print(isLevelFinished);
         if (isLevelFinished)
         {
-            endMessage.text += message + currentLevel.ToString();
-            isLevelFinished = false;
+            print(isLevelFinished);
+
+            endMessage.text = message;
+
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                Debug.Log("going to next scene");
+                endMessage.text = "";
+                LevelFinished();
+            }
         }
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
-        {
-            endMessage.text = "";
-            LevelFinished();
-        }
+
     }
 
     // Update is called once per frame
-    public bool GoalReached(int level)
+    public void GoalReached()
     {
-        this.currentLevel = level;
+        print("goal reached method");
         isLevelFinished = true;
-        return true;
+       
     }
 
     private void LevelFinished()
     {
         //restart everything and load next level
+        isLevelFinished = false;
+        SceneManager.LoadScene("Level1Scene");
     }
 }

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 198049851262761884}
   - component: {fileID: 199457985453724584}
   - component: {fileID: 114240622514084650}
+  - component: {fileID: 76550744825653360}
   m_Layer: 0
   m_Name: PlasmaExplosionEffect
   m_TagString: Untagged
@@ -166,6 +167,19 @@ Transform:
   m_Father: {fileID: 4401624379448942}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!76 &76550744825653360
+WorldParticleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510168197423342}
+  m_BounceFactor: 0.5
+  m_CollisionEnergyLoss: 0
+  m_CollidesWith:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_SendCollisionMessage: 1
+  m_MinKillVelocity: 0
 --- !u!114 &114240622514084650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3497,7 +3511,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -3683,7 +3697,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 1
   TriggerModule:
-    enabled: 0
+    enabled: 1
     collisionShape0: {fileID: 0}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
@@ -3691,9 +3705,9 @@ ParticleSystem:
     collisionShape4: {fileID: 0}
     collisionShape5: {fileID: 0}
     inside: 1
-    outside: 0
-    enter: 0
-    exit: 0
+    outside: 2
+    enter: 2
+    exit: 2
     radiusScale: 1
   SubModule:
     serializedVersion: 2

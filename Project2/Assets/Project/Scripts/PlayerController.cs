@@ -72,12 +72,12 @@ public class PlayerController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Hell")
         {
-            GameOver();
+            Lost();
         }
 
     }
 
-    private void GameOver()
+    private void Lost()
     {
         if(lives > 0)
         {
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour {
             Debug.Log(lives);
         } else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameOver.Instance.isGameOver = true;
             lives = 3;
         }
     }
@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour {
     public void decreaseLives()
     {
         print("lost a life");
-        lives--;
-        GameOver();
+        Lost();
     }
 }

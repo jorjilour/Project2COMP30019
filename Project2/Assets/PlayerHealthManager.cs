@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -7,15 +8,35 @@ public class PlayerHealthManager : MonoBehaviour
     //code copied from COMP30019 Lab 7 
     public int startingHealth = 100;
     private int currentHealth;
-    private int damage = 30;
+    private int damage = 10;
+    private float timeLeft = 3.0f;
     private int powerUp = 10;
     private PlayerController controller;
+    public Slider healthSlider;
+    private bool damaged;
 
     // Use this for initialization
     void Start()
     {
         this.ResetHealthToStarting();
         controller = GetComponent<PlayerController>();
+        timeLeft = -1.0f;
+        damaged = true;
+
+        healthSlider.direction = Slider.Direction.RightToLeft;
+        healthSlider.value = 100;
+    }
+
+    private void Update()
+    {
+        if(damaged)
+        {
+            timeLeft -= Time.deltaTime;
+            if(timeLeft < 0)
+            {
+                damaged = false;
+            }
+        }
     }
 
     // Reset health to original starting health
@@ -29,9 +50,14 @@ public class PlayerHealthManager : MonoBehaviour
     public void ApplyDamage()
     {
         currentHealth -= damage;
+        healthSlider.value = currentHealth;
+        print(healthSlider.value);
+        print(currentHealth);
+
         if (currentHealth <= 0)
         {
             controller.decreaseLives();
+            
             //			Destroy(this.gameObject);
         }
     }
@@ -39,6 +65,7 @@ public class PlayerHealthManager : MonoBehaviour
     public void ApplyPowerUp()
     {
         currentHealth += powerUp;
+        healthSlider.value = currentHealth;
     }
 
     // Get the current health of the object
@@ -49,11 +76,13 @@ public class PlayerHealthManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && timeLeft < 0)
         {
             //print ("hit an enemy, health --"); 
             print("current health is now " + currentHealth);
             ApplyDamage();
+            damaged = true;
+            timeLeft = 1.0f;
         }
     }
 
@@ -66,6 +95,10 @@ public class PlayerHealthManager : MonoBehaviour
             ApplyPowerUp();
 
             Destroy(other.gameObject);
+        }
+        else if(other.gameObject.tag == "Goal")
+        {
+            FinishedALevel.Instance.GoalReached();
         }
     }
 
