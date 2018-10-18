@@ -15,6 +15,7 @@ TagManager:
   - PowerUp
   - ProjPos
   - Gun
+  - MoveFloor
   layers:
   - Default
   - TransparentFX

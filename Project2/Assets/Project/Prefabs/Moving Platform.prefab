@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1830745433439116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 177.4, y: 25.77, z: -8.2}
-  m_LocalScale: {x: 5, y: 0.5, z: 5}
+  m_LocalScale: {x: 5, y: 0.25, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -54,9 +54,11 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 4bfad211fbc59461e908020321555504, type: 2}
   m_StaticBatchInfo:
@@ -69,6 +71,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -123,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dir: 1
+  yT: 10
+  speed: 5
 --- !u!114 &114654409580650772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,3 +145,7 @@ MonoBehaviour:
   - {fileID: 1475748930283130, guid: 82c2120eaf2b1cf4d8127d7fdd85dcc7, type: 2}
   - {fileID: 1372807483561158, guid: a4d33bd73c08d48b4900b99aae09a9c7, type: 2}
   - {fileID: 1372807483561158, guid: a4d33bd73c08d48b4900b99aae09a9c7, type: 2}
+  minNSpawn: 5
+  maxNSpawn: 15
+  maxNEnemies: 2
+  minNEnemies: 2

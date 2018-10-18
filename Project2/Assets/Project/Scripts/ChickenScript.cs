@@ -21,24 +21,24 @@ public class ChickenScript : MonoBehaviour {
 	void Start () {
 		platform = this.transform.parent.gameObject;
 		Vector3 pos = this.transform.position;
-		print ("pos is originally "+ pos);
-		print ("bounds is "+bounds); 
+		// print ("pos is originally "+ pos);
+		// print ("bounds is "+bounds); 
 //		print ("pos y is originally "+pos.y);
 
 		float zSize = platform.GetComponent<Collider>().bounds.size.z;
 		zSize /= 2; 
 
 		bounds = platform.GetComponent<Collider>().bounds.size; 
-		print ("bounds size is "+bounds);
+		//print ("bounds size is "+bounds);
 		leftMaxBound = pos.z - bounds.z/2; 
 		rightMaxBound = pos.z + bounds.z/2; 
 		upMaxBound = pos.x + bounds.x/2; 
 		downMaxBound = pos.x - bounds.x/2; 
 
-		print ("leftMaxBound is" + leftMaxBound);
-		print ("rightMaxBound is" + rightMaxBound);
-		print ("upMaxBound is" + upMaxBound);
-		print ("downMaxBound is" + downMaxBound);
+		// print ("leftMaxBound is" + leftMaxBound);
+		// print ("rightMaxBound is" + rightMaxBound);
+		// print ("upMaxBound is" + upMaxBound);
+		// print ("downMaxBound is" + downMaxBound);
 
 		pos.z += Random.Range (1.0f,zSize);
 //		pos.y += ySize;

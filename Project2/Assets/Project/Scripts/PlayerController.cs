@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
       
-
+        
         if(Input.GetKey(KeyCode.W))
         {
             this.transform.localPosition += Camera.main.transform.forward * Time.deltaTime * speed;
