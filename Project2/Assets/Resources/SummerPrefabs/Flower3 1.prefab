@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4892631658948636}
   - component: {fileID: 33046877286222696}
   - component: {fileID: 23232434227891526}
-  - component: {fileID: 136769489904611036}
-  - component: {fileID: 136358319898584318}
   m_Layer: 0
   m_Name: Flower3 1
   m_TagString: Untagged
@@ -87,29 +85,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209161447991888}
   m_Mesh: {fileID: 4300004, guid: ba75cc4146f942a4bbdbbbd22ed9611d, type: 3}
---- !u!136 &136358319898584318
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1209161447991888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 8.046921
-  m_Height: 16.093857
-  m_Direction: 1
-  m_Center: {x: 0.54566157, y: 15.220501, z: -0.134214}
---- !u!136 &136769489904611036
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1209161447991888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.7910874
-  m_Height: 23.844305
-  m_Direction: 1
-  m_Center: {x: -0.18428208, y: 10.771125, z: 0.024424009}

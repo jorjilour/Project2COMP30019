@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4000010155907680}
   - component: {fileID: 33000011439878018}
   - component: {fileID: 23000012693263004}
-  - component: {fileID: 135049240421198454}
   m_Layer: 0
   m_Name: Stone4
   m_TagString: Untagged
@@ -84,15 +83,3 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012599779874}
   m_Mesh: {fileID: 4300130, guid: 2ad459b491a70ba4b9febbc47a27d881, type: 3}
---- !u!135 &135049240421198454
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012599779874}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.21672009
-  m_Center: {x: 0.0076956153, y: 0.11400314, z: 0.003822185}
