@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-    public float speed;
+    public float speed = 10.0f;
     public Rigidbody rigidBody;
 
     private float jumpSpeed = 5.0f;
@@ -16,18 +16,17 @@ public class PlayerController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.Log("Started");
         jumping = false;
         //lives = 3;
     }
 	
 	// Update is called once per frame
 	void Update () {
-      
-        
         if(Input.GetKey(KeyCode.W))
         {
+            Debug.Log("Press W");
             this.transform.localPosition += Camera.main.transform.forward * Time.deltaTime * speed;
-
         }
         else if (Input.GetKey(KeyCode.S))
         {
@@ -72,35 +71,28 @@ public class PlayerController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Hell")
         {
-            GameOver();
+           // Lost();
         }
 
     }
 
-    private void GameOver()
+    private void Lost()
     {
         if(lives > 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             lives-=1;
-            Debug.Log(lives);
+            Debug.Log("Lives left: " + lives);
         } else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            lives = 3;
+          Debug.Log("Too bad");
         }
-    }
-
-    void OnParticleCollision(GameObject particleHolderObject)
-    {
-        Debug.Log("collider");
     }
 
     public void decreaseLives()
     {
-        print("lost a life");
-        lives--;
-        GameOver();
+        Debug.Log("DECREASE LI");
+        //Lost();
     }
 
 }

@@ -32,7 +32,7 @@ public class PlayerShootEnemy : MonoBehaviour {
             GameObject projectile = Instantiate<GameObject>(projectilePrefab);
             projectile.transform.position = projectileInitPos.transform.position;
 
-			Destroy (projectile, 2.0f);
+			Destroy (projectile, 2000.0f);
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {

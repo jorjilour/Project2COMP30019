@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ParticleCollisionScript : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
-		
+       // Debug.Log(PlayerHealthManager.Instance.damaged);
+
 	}
 	
 	// Update is called once per frame
@@ -16,16 +16,16 @@ public class ParticleCollisionScript : MonoBehaviour {
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("collided with something");
-
-        if (other.tag=="Player"){
-            Debug.Log("collided with particle system");
-            Destroy(this);
+        
+        //PlayerHealthManager playerHealth = other.gameObject.GetComponent<PlayerHealthManager>();
+        if (other.tag=="Player" || other.tag == "MainCamera"){
+           // Debug.Log("collided with player");
+            // PlayerHealthManager.Instance.ApplyDamage();
+            // PlayerHealthManager.Instance.damaged = true;
+            // PlayerHealthManager.Instance.timeLeft = 1.0f;
         }
+       
     }
 
-    //code copied from https://www.youtube.com/watch?v=JTGv_maOyHk
-	void onCollisionEnter(Collision col){
-		Debug.Log ("touched something");
-	}
+    
 }
