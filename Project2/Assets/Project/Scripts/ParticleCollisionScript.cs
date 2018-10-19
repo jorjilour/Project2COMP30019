@@ -19,10 +19,10 @@ public class ParticleCollisionScript : MonoBehaviour {
         
         //PlayerHealthManager playerHealth = other.gameObject.GetComponent<PlayerHealthManager>();
         if (other.tag=="Player" || other.tag == "MainCamera"){
-           // Debug.Log("collided with player");
-            // PlayerHealthManager.Instance.ApplyDamage();
-            // PlayerHealthManager.Instance.damaged = true;
-            // PlayerHealthManager.Instance.timeLeft = 1.0f;
+           Debug.Log("collided with player");
+            PlayerHealthManager.Instance.ApplyDamage();
+            PlayerHealthManager.Instance.damaged = true;
+            PlayerHealthManager.Instance.timeLeft = 1.0f;
         }
        
     }

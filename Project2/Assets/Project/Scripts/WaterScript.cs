@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleSystemLifespanScript : MonoBehaviour {
-
+public class WaterScript : MonoBehaviour {
+	public Shader shader;
 	// Use this for initialization
 	void Start () {
-        Destroy(this.gameObject, 2.0f);
+		
 	}
 	
 	// Update is called once per frame

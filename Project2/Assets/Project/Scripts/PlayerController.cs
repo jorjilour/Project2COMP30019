@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         if(Input.GetKey(KeyCode.W))
         {
-            Debug.Log("Press W");
+            
             this.transform.localPosition += Camera.main.transform.forward * Time.deltaTime * speed;
         }
         else if (Input.GetKey(KeyCode.S))
@@ -42,6 +42,12 @@ public class PlayerController : MonoBehaviour {
             this.transform.localPosition += Camera.main.transform.right * Time.deltaTime * speed * -1;
         }
 
+        
+
+        
+    }
+
+    void FixedUpdate(){
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && !jumping)
         {
@@ -49,10 +55,7 @@ public class PlayerController : MonoBehaviour {
             Jump();
             jumping = true;
         }
-
-        
     }
-
     void Jump()
     {
         Vector3 up = transform.TransformDirection(Vector3.up);
@@ -71,7 +74,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (collision.gameObject.tag == "Hell")
         {
-           // Lost();
+            Lost();
         }
 
     }
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     public void decreaseLives()
     {
         Debug.Log("DECREASE LI");
-        //Lost();
+        Lost();
     }
 
 }
